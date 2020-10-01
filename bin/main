@@ -1,2 +1,36 @@
 #!/usr/bin/env ruby
-puts 'Hello World!'
+puts "Welcome to Tic Tac Toe game!"
+# Get player1 name from user
+# puts "Enter player 1 name"
+# Assign variable player1 = gets.chomp
+# Get player2 name from user
+# puts "Enter player 2 name"
+# Assign variable player2 = gets.chomp
+# Make sure player1 != player2, show error msg is so.
+# Ask player1 to choose either X or O
+# puts "Please choose X or O"
+# Assign variable player1_choice = gets.chomp
+# Assign the other option to player2
+# player2_choice = player1_choice == 'X' ? 'O' : 'X'
+# Create a variable for all available positions (from 1 to 9)
+# pos_avail = (1..9)
+# Create a loop to check if game is going on, then do the following:
+# game = true
+# while game
+# show an empty board to players with available positions
+# Ask player1 for first move 
+# puts "#{player1} please enter your move (1-9)"
+# Take the input from player1 using gets and mark it invalid for the possible positions for player2
+# pos_player1 = gets.chomp.to_i
+# Check if position entered is valid and updates the available positions
+# Show the game board to player2 with the updated positions 
+# Repeat the same process for player2
+# If either player meets the 'WIN condition' (horizontal, vertical, or diagonal), display WIN
+# if WIN
+# puts the winning player
+# else
+# puts draw
+# end
+# assign game = false to stop next iteration
+# end
+# end
