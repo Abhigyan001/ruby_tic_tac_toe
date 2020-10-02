@@ -23,6 +23,22 @@ def player_names(player1, player2)
     puts "Let's start #{player1.name} and #{player2.name}"
 end
 
+def player_choice(player1, player2)
+  puts "#{player1.name}, Choose X or O"
+  check1 = true
+  while check1
+    player1.choice = gets.chomp.upcase
+    if player1.choice == "X" || player1.choice == "O"
+      check1 = false
+    else
+      puts "Please enter either X or O" 
+    end
+    break if check1 == false
+  end
+  player2.choice = player1.choice == 'X' ? 'O' : 'X'
+  puts "#{player1.name} has chosen #{player1.choice} and #{player2.name} will use #{player2.choice}"
+end
+
 puts "-----------------------------"
 puts " Welcome to Tic Tac Toe game!"
 puts "-----------------------------"
@@ -30,5 +46,6 @@ puts "-----------------------------"
 player1 = Player.new
 player2 = Player.new
 player_names(player1, player2)
+player_choice(player1, player2)
 
 
