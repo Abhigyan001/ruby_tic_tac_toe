@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# rubocop:disable Lint/UselessAssignment, Style/IdenticalConditionalBranches, Lint/ConditionPosition, Metrics/LineLength
+# rubocop:disable Lint/UselessAssignment, Style/IdenticalConditionalBranches, Lint/ConditionPosition
 
 puts 'Welcome to Tic Tac Toe game!'
 # Get player1 name from user
@@ -45,4 +45,4 @@ while game
     game = false # (to stop the loop)
   end
 end
-# rubocop:enable Lint/UselessAssignment, Style/IdenticalConditionalBranches, Lint/ConditionPosition, Layout/TrailingBlankLines, Metrics/LineLength
+# rubocop:enable Lint/UselessAssignment, Style/IdenticalConditionalBranches, Lint/ConditionPosition
