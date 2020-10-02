@@ -1,4 +1,34 @@
-puts 'Welcome to Tic Tac Toe game!'
+#!/usr/bin/env ruby
+require_relative '../lib/player'
+
+def name_check
+    check = true
+    while check
+      check = false
+      name = gets.chomp      
+      if name == " " || name.length < 3
+        puts "Enter a valid name:"
+        check = true
+      end
+    end
+    name.capitalize
+  end
+
+def player_names(player1, player2)
+    puts "Player 1 Name : "
+    player1.name = name_check   
+    puts "Player 2 Name :"
+    player2.name = name_check
+    player2.name = "#{player2.name}2" if player1.name == player2.name
+    puts "Let's start #{player1.name} and #{player2.name}"
+end
+
+puts "-----------------------------"
+puts " Welcome to Tic Tac Toe game!"
+puts "-----------------------------"
 
 player1 = Player.new
 player2 = Player.new
+player_names(player1, player2)
+
+
