@@ -52,16 +52,16 @@ class Board
     assigned_place
   end
 
-  def input_pos(arg, input)
-    @board[0] = input if val == 1
-    @board[1] = input if val == 2
-    @board[2] = input if val == 3
-    @board[3] = input if val == 4
-    @board[4] = input if val == 5
-    @board[5] = input if val == 6
-    @board[6] = input if val == 7
-    @board[7] = input if val == 8
-    @board[8] = input if val == 9
+  def input_pos(arg, choice)
+    @board[0] = choice if arg == 1
+    @board[1] = choice if arg == 2
+    @board[2] = choice if arg == 3
+    @board[3] = choice if arg == 4
+    @board[4] = choice if arg == 5
+    @board[5] = choice if arg == 6
+    @board[6] = choice if arg == 7
+    @board[7] = choice if arg == 8
+    @board[8] = choice if arg == 9
     @inputs += 1
     display_board
   end

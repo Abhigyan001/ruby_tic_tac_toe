@@ -41,17 +41,45 @@ def player_choice(player1, player2)
 end
 
 def board_check(new_board)
-  check2 = true
-  while check2
-    check2 = false
-    position = Integer(gets.chomp)      
-    if position < 10 && new_board.user_input(position) == " "
-      check2 = true
-    else
-      puts "Please input a valid integer"
+  check2 = false
+  until check2    
+    begin
+      position = Integer(gets.chomp)
+    rescue StandardError
+      puts 'Provide a valid integer'
+      retry
+    end
+    check2 = true if position < 10 && new_board.user_input(position) == ' '
+    puts "Please provide a valid integer (1-9) which is not used previously" if position > 9 || new_board.user_input(position) != ' '
+  end
+  position  
+end
+
+def start_game(new_game, player1, player2)
+  puts "Let start #{player1.name} and #{player2.name}"
+  puts new_game.display_board
+  loop do
+    puts "#{player1.name} please make your move :"
+    pos = board_check(new_game)
+    puts new_game.input_pos(pos, player1.choice)
+    if new_game.check_win(player1.choice)
+      puts "#{player1.name} WINS"
+      break
+    end
+
+    if new_game.inputs == 9
+      puts 'This game is a DRAW'
+      break
+    end
+
+    puts "#{player2.name} please make your move :"
+    pos = board_check(new_game)
+    puts new_game.input_pos(pos, player2.choice)
+    if new_game.check_win(player2.choice)
+      puts "#{player2.name} WINS"
+      break
     end
   end
-  position
 end
 
 puts "-----------------------------"
@@ -65,6 +93,4 @@ player_choice(player1, player2)
 
 new_game = Board.new
 
-
-
-
+start_game(new_game, player1, player2)
