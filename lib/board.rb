@@ -1,4 +1,4 @@
-# rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+# rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/LineLength
 class Board
   attr_accessor :board
   attr_reader :inputs
@@ -9,11 +9,7 @@ class Board
   end
 
   def display_board
-    puts "#{@board[0]} | #{@board[1]} | #{@board[2]}"
-    puts '--|---|--'
-    puts "#{@board[3]} | #{@board[4]} | #{@board[5]}"
-    puts '--|---|--'
-    puts "#{@board[6]} | #{@board[7]} | #{@board[8]}"
+    "#{@board[0]} | #{@board[1]} | #{@board[2]}\n--|---|--\n#{@board[3]} | #{@board[4]} | #{@board[5]}\n--|---|--\n#{@board[6]} | #{@board[7]} | #{@board[8]}"
   end
 
   # check for row,column, and diagonal match
@@ -68,4 +64,4 @@ class Board
     display_board
   end
 end
-# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
+# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity, Metrics/LineLength
