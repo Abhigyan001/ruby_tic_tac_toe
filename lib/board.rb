@@ -28,6 +28,15 @@ class Board
 			[@board[0], @board[4], @board[8]],
 			[@board[2], @board[4], @board[6]]      
 		]
+
+		win_conditions.each do |element|
+      check_match = element.all? do |val|
+        val == input
+      end
+      next unless check_match
+      return true
+    end
+    false
 	end
 
 	def user_input(arg)

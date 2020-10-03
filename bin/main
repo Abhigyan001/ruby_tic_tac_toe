@@ -64,7 +64,7 @@ player_names(player1, player2)
 player_choice(player1, player2)
 
 new_game = Board.new
-board_check(new_game)
+
 
 
 
