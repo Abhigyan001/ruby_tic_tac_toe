@@ -51,4 +51,6 @@ player_choice(player1, player2)
 
 new_game = Board.new
 
+puts new_game.display_board
+
 
