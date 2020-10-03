@@ -20,7 +20,7 @@ player1_choice = gets.chomp
 # Create a variable for all available positions (from 1 to 9)
 # pos_avail = (1..9)
 # Start a loop to check if game is going on
-game = true
+# game = true
 while game
   # loop for each move
   # Make initial win condition as false
