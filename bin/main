@@ -3,25 +3,25 @@ require_relative '../lib/player'
 require_relative '../lib/board'
 
 def name_check
-    check = true
-    while check
-      check = false
-      name = gets.chomp      
-      if name == " " || name.length < 3
-        puts "Enter a valid name:"
-        check = true
-      end
+  check = true
+  while check
+    check = false
+    name = gets.chomp      
+    if name == " " || name.length < 3
+      puts "Enter a valid name:"
+      check = true
     end
-    name.capitalize
   end
+  name.capitalize
+end
 
 def player_names(player1, player2)
-    puts "Player 1 Name : "
-    player1.name = name_check   
-    puts "Player 2 Name :"
-    player2.name = name_check
-    player2.name = "#{player2.name}2" if player1.name == player2.name
-    puts "Let's start #{player1.name} and #{player2.name}"
+  puts "Player 1 Name : "
+  player1.name = name_check   
+  puts "Player 2 Name :"
+  player2.name = name_check
+  player2.name = "#{player2.name}2" if player1.name == player2.name
+  puts "Let's start #{player1.name} and #{player2.name}"
 end
 
 def player_choice(player1, player2)
@@ -40,6 +40,20 @@ def player_choice(player1, player2)
   puts "#{player1.name} has chosen #{player1.choice} and #{player2.name} will use #{player2.choice}"
 end
 
+def board_check(new_board)
+  check2 = true
+  while check2
+    check2 = false
+    position = Integer(gets.chomp)      
+    if position < 10 && new_board.user_input(position) == " "
+      check2 = true
+    else
+      puts "Please input a valid integer"
+    end
+  end
+  position
+end
+
 puts "-----------------------------"
 puts " Welcome to Tic Tac Toe game!"
 puts "-----------------------------"
@@ -50,7 +64,7 @@ player_names(player1, player2)
 player_choice(player1, player2)
 
 new_game = Board.new
+board_check(new_game)
 
-puts new_game.display_board
 
 
