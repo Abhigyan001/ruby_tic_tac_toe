@@ -1,4 +1,4 @@
-# rubocop:disable Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
+# rubocop:disable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
 class Board
   attr_accessor :board
   attr_reader :inputs
@@ -68,4 +68,4 @@ class Board
     display_board
   end
 end
-# rubocop:enable Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
+# rubocop:enable Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
