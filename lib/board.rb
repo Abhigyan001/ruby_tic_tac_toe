@@ -35,6 +35,7 @@ class Board
         val == input
       end
       next unless check_match
+      
       return true
     end
     false

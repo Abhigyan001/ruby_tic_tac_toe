@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# rubocop:disable Metrics/CyclomaticComplexity,Metrics/LineLength, Metrics/MethodLength
+# rubocop:disable Metrics/CyclomaticComplexity, Layout/LineLength, Metrics/MethodLength
 require_relative '../lib/player'
 require_relative '../lib/board'
 
@@ -96,4 +96,4 @@ new_game = Board.new
 
 start_game(new_game, player1, player2)
 
-# rubocop:enable Metrics/CyclomaticComplexity,Metrics/LineLength, Metrics/MethodLength
+# rubocop:enable Metrics/CyclomaticComplexity, Layout/LineLength, Metrics/MethodLength
