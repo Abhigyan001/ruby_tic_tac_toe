@@ -1,35 +1,36 @@
-class Board	
+# rubocop:disable Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
+class Board
   attr_accessor :board
   attr_reader :inputs
-  
-  def initialize
-		@board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-		@inputs = 0
-	end
-	
-	def display_board
-		puts "#{@board[0]} | #{@board[1]} | #{@board[2]}"
-		puts "--|---|--"
-		puts "#{@board[3]} | #{@board[4]} | #{@board[5]}"
-		puts "--|---|--"
-    puts "#{@board[6]} | #{@board[7]} | #{@board[8]}"
-	end
 
-	# check for row,column, and diagonal match
-	
-	def check_win(input)
+  def initialize
+    @board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+    @inputs = 0
+  end
+
+  def display_board
+    puts "#{@board[0]} | #{@board[1]} | #{@board[2]}"
+    puts '--|---|--'
+    puts "#{@board[3]} | #{@board[4]} | #{@board[5]}"
+    puts '--|---|--'
+    puts "#{@board[6]} | #{@board[7]} | #{@board[8]}"
+  end
+
+  # check for row,column, and diagonal match
+
+  def check_win(input)
     win_conditions = [
       [@board[0], @board[1], @board[2]],
-			[@board[3], @board[4], @board[5]],
-			[@board[6], @board[7], @board[8]],
-			[@board[0], @board[3], @board[6]],
-			[@board[1], @board[4], @board[7]],
-			[@board[2], @board[5], @board[8]],
-			[@board[0], @board[4], @board[8]],
-			[@board[2], @board[4], @board[6]]      
-		]
+      [@board[3], @board[4], @board[5]],
+      [@board[6], @board[7], @board[8]],
+      [@board[0], @board[3], @board[6]],
+      [@board[1], @board[4], @board[7]],
+      [@board[2], @board[5], @board[8]],
+      [@board[0], @board[4], @board[8]],
+      [@board[2], @board[4], @board[6]]
+    ]
 
-		win_conditions.each do |element|
+    win_conditions.each do |element|
       check_match = element.all? do |val|
         val == input
       end
@@ -37,9 +38,9 @@ class Board
       return true
     end
     false
-	end
+  end
 
-	def user_input(arg)
+  def user_input(arg)
     assigned_place = @board[0] if arg == 1
     assigned_place = @board[1] if arg == 2
     assigned_place = @board[2] if arg == 3
@@ -66,3 +67,4 @@ class Board
     display_board
   end
 end
+# rubocop:enable Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
