@@ -1,2 +1,48 @@
 #!/usr/bin/env ruby
-puts 'Hello World!'
+# rubocop:disable Lint/UselessAssignment, Style/IdenticalConditionalBranches, Lint/ConditionPosition
+
+puts 'Welcome to Tic Tac Toe game!'
+# Get player1 name from user
+puts 'Enter player 1 name'
+# Assign variable player1 to store the name
+player1 = gets.chomp
+# Get player2 name from user
+puts 'Enter player 2 name'
+# Assign variable player2 to store the name
+player2 = gets.chomp
+# Make sure player1 != player2, show error msg if so.
+# Ask player1 to choose either X or O
+puts 'Player 1 please choose X or O'
+# Assign variable player1_choice to store the choice
+player1_choice = gets.chomp
+# Assign the other option to player2
+# player2_choice = player1_choice == 'X' ? 'O' : 'X'
+# Create a variable for all available positions (from 1 to 9)
+# pos_avail = (1..9)
+# Start a loop to check if game is going on
+game = true
+while game
+  # loop for each move
+  # Make initial win condition as false
+  # condition = false
+  # Display an empty board to show players available positions
+  # Ask player1 for first move
+  puts "#{player1} please enter your move (1-9)"
+  pos_player1 = gets.chomp
+  # Check if position entered is valid and updates the available positions
+  # Show the game board to player2 with the updated positions
+  # Repeat the same process for player2
+  puts "#{player2} please enter your move"
+  pos_player2 = gets.chomp
+  # If either player meets the 'WIN condition' (horizontal, vertical, or diagonal), display player1 wins or player2 wins
+  if # condition == WIN
+    puts "#{player1} wins!" # or
+    puts "#{player2} wins!"
+    game = false # (to stop the loop)
+  # Otherwise display the 'DRAW condition'
+  else
+    puts "It's a draw!"
+    game = false # (to stop the loop)
+  end
+end
+# rubocop:enable Lint/UselessAssignment, Style/IdenticalConditionalBranches, Lint/ConditionPosition
