@@ -1,0 +1,99 @@
+#!/usr/bin/env ruby
+# rubocop:disable Metrics/CyclomaticComplexity, Layout/LineLength, Metrics/MethodLength
+require_relative '../lib/player'
+require_relative '../lib/board'
+
+def name_check
+  check = true
+  while check
+    check = false
+    name = gets.chomp
+    if name == ' ' || name.length < 3
+      puts 'Enter a valid name:'
+      check = true
+    end
+  end
+  name.capitalize
+end
+
+def player_names(player1, player2)
+  puts 'Player 1 Name : '
+  player1.name = name_check
+  puts 'Player 2 Name :'
+  player2.name = name_check
+  player2.name = "#{player2.name}2" if player1.name == player2.name
+  puts "Let's start #{player1.name} and #{player2.name}"
+end
+
+def player_choice(player1, player2)
+  puts "#{player1.name}, Choose X or O"
+  check1 = true
+  while check1
+    player1.choice = gets.chomp.upcase
+    if player1.choice == 'X' || player1.choice == 'O'
+      check1 = false
+    else
+      puts 'Please enter either X or O'
+    end
+    break if check1 == false
+  end
+  player2.choice = player1.choice == 'X' ? 'O' : 'X'
+  puts "#{player1.name} has chosen #{player1.choice} and #{player2.name} will use #{player2.choice}"
+end
+
+def board_check(new_board)
+  check2 = false
+  until check2
+    begin
+      position = Integer(gets.chomp)
+    rescue StandardError
+      puts 'Provide a valid integer'
+      retry
+    end
+    check2 = true if position < 10 && new_board.user_input(position) == ' '
+    puts 'Please provide a valid integer (1-9) which is not used previously' if position > 9 || new_board.user_input(position) != ' '
+  end
+  position
+end
+
+def start_game(new_game, player1, player2)
+  puts "Let start #{player1.name} and #{player2.name}"
+  puts new_game.display_board
+  loop do
+    puts "#{player1.name} please make your move :"
+    pos = board_check(new_game)
+    puts new_game.input_pos(pos, player1.choice)
+    if new_game.check_win(player1.choice)
+      puts "Congrats #{player1.name}, you WIN!"
+      break
+    end
+
+    if new_game.inputs == 9
+      puts 'This game is a Tie'
+      break
+    end
+
+    puts "#{player2.name} please make your move :"
+    pos = board_check(new_game)
+    puts new_game.input_pos(pos, player2.choice)
+    if new_game.check_win(player2.choice)
+      puts "Congrats #{player2.name}, you WIN!"
+      break
+    end
+  end
+end
+
+puts '-----------------------------'
+puts ' Welcome to Tic Tac Toe game!'
+puts '-----------------------------'
+
+player1 = Player.new
+player2 = Player.new
+player_names(player1, player2)
+player_choice(player1, player2)
+
+new_game = Board.new
+
+start_game(new_game, player1, player2)
+
+# rubocop:enable Metrics/CyclomaticComplexity, Layout/LineLength, Metrics/MethodLength
