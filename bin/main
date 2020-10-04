@@ -64,12 +64,12 @@ def start_game(new_game, player1, player2)
     pos = board_check(new_game)
     puts new_game.input_pos(pos, player1.choice)
     if new_game.check_win(player1.choice)
-      puts "#{player1.name} WINS"
+      puts "Congrats #{player1.name}, you WIN!"
       break
     end
 
     if new_game.inputs == 9
-      puts 'This game is a DRAW'
+      puts 'This game is a Tie'
       break
     end
 
@@ -77,7 +77,7 @@ def start_game(new_game, player1, player2)
     pos = board_check(new_game)
     puts new_game.input_pos(pos, player2.choice)
     if new_game.check_win(player2.choice)
-      puts "#{player2.name} WINS"
+      puts "Congrats #{player2.name}, you WIN!"
       break
     end
   end
