@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# OOPs-tic-tac-toe
+# ruby_tic_tac_toe
 
 > In this project, we're required to create a Tic Tac Toe Game using Ruby with OOP concepts.
 
