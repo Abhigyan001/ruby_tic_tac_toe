@@ -19,22 +19,30 @@ Below is a basic demonstration of how the tic tac toe game works
 
 ## Steps to play the game : 
 
-- Player 1 is asked to choose between 'X' and 'O'. Player 2 is assigned the key not chosen by Player 1.
+  1. Find a friend to play with and run the program.
+  2. Player 1 is asked to choose between 'X' and 'O'. Player 2 is assigned the key not chosen by Player 1.
+  3. The selected player will be asked to input a number from 1 to 9 - each representing one field in the tic tac toe 3x3 grid.
+  4. Afterwards the other player will select the next field which will be marked by another symbol.
+  5. Selecting a field previously selected or inputting something besides an integer from 1 to 9 will not be accepted.
+  6. You will keep alternating until a winner is declared or the game ends in a draw.
+  7. First one to fill out a line with his three of his own symbols horizontally, vertically or diagonally wins!
 
-- The game starts with an empty board.
+### Prerequisites
 
-- Players are prompt to enter the position for their respective key.
+Ruby installed locally
 
-- The game continues until we have a winning combination or the grid is full and it is a draw.
+### How to start game
 
-- Winning combinations are full row, full column or full diagonal.
+1. [Download](Clone the repository to your machine)
 
-## How to install
+```sh
+$ git clone https://github.com/Abhigyan001/ruby_tic_tac_toe
+```
 
-- Download or clone the repository's files github repo
-- Have Ruby 2.7 installed
-- Once repo is downloaded to local directory, in you console run cmd: main
-- Enjoy the game!
+2. Navigate to the project folder and execute the "bin/main.exe" file.
+
+3. Type in main in the terminal.
+
 
 ## Screenshot
 
