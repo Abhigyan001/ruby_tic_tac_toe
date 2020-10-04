@@ -38,9 +38,7 @@ Below is a basic demonstration of how the tic tac toe game works
 
 ## Screenshot
 
-![screenshot](./assets/Tic-tac-toe-image1.png)
-
-![screenshot](./assets/Tic-tac-toe-image2.png)
+![screenshot](./images/ss1.png)
 
 ## Built With
 
